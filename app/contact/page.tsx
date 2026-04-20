@@ -95,10 +95,10 @@ export default function ContactPage() {
           fill="white"
         />
 
-        <div className="flex h-full">
+        <div className="flex h-full max-md:items-end max-md:pb-16">
           {/* Left: text starting at 50vh */}
-          <div className="flex-1 relative z-10">
-            <div style={{ position: "absolute", top: "50vh", left: 0, paddingLeft: "clamp(20px, 5.5vw, 80px)", paddingRight: "40px", maxWidth: "640px" }}>
+          <div className="flex-1 relative z-10 max-md:!w-full">
+            <div className="max-md:!top-[40vh]" style={{ position: "absolute", top: "50vh", left: 0, paddingLeft: "clamp(20px, 5.5vw, 80px)", paddingRight: "40px", maxWidth: "640px" }}>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -140,7 +140,7 @@ export default function ContactPage() {
           </div>
 
           {/* Right: Spline robot — sized to complement heading */}
-          <div style={{ flex: "0 0 60%", position: "relative", marginTop: "6vh" }}>
+          <div className="hidden md:block" style={{ flex: "0 0 60%", position: "relative", marginTop: "6vh" }}>
             <SplineScene
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
               className="w-full h-full"

@@ -102,7 +102,7 @@ export default function Advantages() {
       {/* Sticky viewport container */}
       <div
         data-stack-content
-        className="sticky top-0 flex flex-col justify-center max-md:!px-5 max-md:!py-16"
+        className="sticky top-0 flex flex-col justify-center max-md:!px-5 max-md:!py-16 max-md:!static max-md:!h-auto"
         style={{
           height: "100vh",
           padding: "120px 80px 60px",
@@ -154,17 +154,40 @@ export default function Advantages() {
 
           {/* 3D Glass Cards — scatter-to-grid animation */}
           <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-md:flex max-md:flex-col max-md:gap-4"
             style={{ perspective: "800px" }}
           >
             {cards.map((card, i) => (
-              <ScatterCard
-                key={card.number}
-                card={card}
-                index={i}
-                centerIndex={centerIndex}
-                scrollYProgress={scrollYProgress}
-              />
+              <>
+                {/* Desktop: scatter animation card */}
+                <div key={`desktop-${card.number}`} className="hidden md:block">
+                  <ScatterCard
+                    card={card}
+                    index={i}
+                    centerIndex={centerIndex}
+                    scrollYProgress={scrollYProgress}
+                  />
+                </div>
+                {/* Mobile: plain clean card */}
+                <motion.div
+                  key={`mobile-${card.number}`}
+                  className="md:hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, ease: "easeOut", delay: i * 0.1 }}
+                  style={{
+                    background: "#ffffff",
+                    border: "1px solid rgba(0,0,0,0.1)",
+                    borderRadius: "16px",
+                    padding: "28px 24px",
+                  }}
+                >
+                  <p style={{ fontSize: "11px", fontWeight: 600, color: "rgba(0,0,0,0.3)", letterSpacing: "0.08em", marginBottom: "12px" }}>{card.number}</p>
+                  <p style={{ fontSize: "18px", fontWeight: 600, color: "#1d1d1f", letterSpacing: "-0.02em", marginBottom: "10px" }}>{card.title}</p>
+                  <p style={{ fontSize: "15px", color: "#86868b", lineHeight: 1.5 }}>{card.body}</p>
+                </motion.div>
+              </>
             ))}
           </div>
         </div>

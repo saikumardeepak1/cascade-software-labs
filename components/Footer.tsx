@@ -145,7 +145,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2 */}
-          <div>
+          <div className="max-md:border-t max-md:border-white/10 max-md:pt-8">
             <ul className="space-y-0">
               {footerNavCol2.map((item) => (
                 <li key={item.label}>
@@ -164,7 +164,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3 — Contact */}
-          <div>
+          <div className="max-md:border-t max-md:border-white/10 max-md:pt-8">
             <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-white/40 mb-4">
               Contact
             </p>
@@ -195,7 +195,7 @@ export default function Footer() {
         <div className="border-t border-white/10 my-10" />
 
         {/* Bottom row */}
-        <div className="flex flex-wrap justify-between items-center gap-4 text-[12px] text-white/40">
+        <div className="flex flex-wrap justify-between items-center gap-4 text-[12px] text-white/40 max-md:flex-col max-md:items-start max-md:gap-3">
           {/* Left — partner badges */}
           <div className="flex flex-wrap gap-4">
             <span className="flex items-center gap-2">
@@ -230,7 +230,7 @@ export default function Footer() {
           </div>
 
           {/* Right — legal */}
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4 max-md:gap-3">
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms of Use
             </Link>
