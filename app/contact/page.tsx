@@ -95,20 +95,22 @@ export default function ContactPage() {
           fill="white"
         />
 
-        <div className="flex h-full max-md:items-end max-md:pb-16">
+        <div className="flex h-full max-md:!flex-col max-md:!justify-end max-md:!pb-16">
           {/* Left: text starting at 50vh */}
-          <div className="flex-1 relative z-10 max-md:!w-full">
-            <div className="max-md:!top-[40vh]" style={{ position: "absolute", top: "50vh", left: 0, paddingLeft: "clamp(20px, 5.5vw, 80px)", paddingRight: "40px", maxWidth: "640px" }}>
+          <div className="flex-1 relative z-10 max-md:!flex-none max-md:!w-full max-md:!relative max-md:!px-5">
+            <div className="max-md:!static max-md:!max-w-full max-md:!p-0 max-md:!text-center" style={{ position: "absolute", top: "50vh", left: 0, paddingLeft: "clamp(20px, 5.5vw, 80px)", paddingRight: "40px", maxWidth: "640px" }}>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
+                className="max-md:text-center"
                 style={{ fontSize: "12px", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", color: "rgba(255,255,255,0.4)", marginBottom: "28px" }}
               >
                 Get in Touch
               </motion.p>
 
               <motion.h1
+                className="max-md:text-center max-md:!text-[2.8rem]"
                 style={{ fontSize: "clamp(2.8rem, 6vw, 6rem)", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.0, color: "#ffffff", marginBottom: "32px" }}
               >
                 {[["Cascade"], ["Software", "Labs"]].map((line, li) => (
@@ -132,6 +134,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, x: -32, filter: "blur(6px)" }}
                 animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.45 }}
+                className="max-md:text-center max-md:!max-w-full"
                 style={{ fontSize: "19px", color: "rgba(255,255,255,0.55)", lineHeight: 1.42, maxWidth: "480px" }}
               >
                 Schedule a discovery call with our Solutions Architects. We'll assess your AI readiness and design a roadmap in two weeks.
