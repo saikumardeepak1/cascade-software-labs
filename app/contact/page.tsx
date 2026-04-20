@@ -95,22 +95,49 @@ export default function ContactPage() {
           fill="white"
         />
 
-        <div className="flex h-full max-md:!flex-col max-md:!justify-end max-md:!pb-16">
+        {/* ── Mobile hero: clean centered text ── */}
+        <div className="md:hidden flex flex-col items-center justify-center h-full px-6 text-center z-10 relative">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            style={{ fontSize: "12px", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", color: "rgba(255,255,255,0.4)", marginBottom: "24px" }}
+          >
+            Get in Touch
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            style={{ fontSize: "clamp(2.8rem, 12vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.05, color: "#ffffff", marginBottom: "24px" }}
+          >
+            Cascade<br />Software Labs
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
+            style={{ fontSize: "17px", color: "rgba(255,255,255,0.55)", lineHeight: 1.5, maxWidth: "320px" }}
+          >
+            Schedule a discovery call with our Solutions Architects.
+          </motion.p>
+        </div>
+
+        {/* ── Desktop hero: absolute text + Spline ── */}
+        <div className="hidden md:flex h-full">
           {/* Left: text starting at 50vh */}
-          <div className="flex-1 relative z-10 max-md:!flex-none max-md:!w-full max-md:!relative max-md:!px-5">
-            <div className="max-md:!static max-md:!max-w-full max-md:!p-0 max-md:!text-center" style={{ position: "absolute", top: "50vh", left: 0, paddingLeft: "clamp(20px, 5.5vw, 80px)", paddingRight: "40px", maxWidth: "640px" }}>
+          <div className="flex-1 relative z-10">
+            <div style={{ position: "absolute", top: "50vh", left: 0, paddingLeft: "clamp(20px, 5.5vw, 80px)", paddingRight: "40px", maxWidth: "640px" }}>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="max-md:text-center"
                 style={{ fontSize: "12px", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", color: "rgba(255,255,255,0.4)", marginBottom: "28px" }}
               >
                 Get in Touch
               </motion.p>
 
               <motion.h1
-                className="max-md:text-center max-md:!text-[2.8rem]"
                 style={{ fontSize: "clamp(2.8rem, 6vw, 6rem)", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.0, color: "#ffffff", marginBottom: "32px" }}
               >
                 {[["Cascade"], ["Software", "Labs"]].map((line, li) => (
@@ -134,7 +161,6 @@ export default function ContactPage() {
                 initial={{ opacity: 0, x: -32, filter: "blur(6px)" }}
                 animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.45 }}
-                className="max-md:text-center max-md:!max-w-full"
                 style={{ fontSize: "19px", color: "rgba(255,255,255,0.55)", lineHeight: 1.42, maxWidth: "480px" }}
               >
                 Schedule a discovery call with our Solutions Architects. We'll assess your AI readiness and design a roadmap in two weeks.
@@ -142,8 +168,8 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Right: Spline robot — sized to complement heading */}
-          <div className="hidden md:block" style={{ flex: "0 0 60%", position: "relative", marginTop: "6vh" }}>
+          {/* Right: Spline robot */}
+          <div style={{ flex: "0 0 60%", position: "relative", marginTop: "6vh" }}>
             <SplineScene
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
               className="w-full h-full"
