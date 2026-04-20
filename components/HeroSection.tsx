@@ -14,7 +14,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative overflow-hidden max-md:!bg-none max-md:!bg-white"
       style={{ height: "100svh", position: "sticky", top: 0, zIndex: 1, backgroundImage: "url('/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
       aria-label="Hero"
     >
@@ -24,10 +24,10 @@ export function HeroSection() {
         fill="white"
       />
 
-      <div className="flex h-full">
+      <div className="flex h-full max-md:!justify-center max-md:!pt-[40vh] max-md:items-start">
         {/* Left content */}
         <div
-          className="relative z-10 flex flex-col justify-end pb-10 md:pb-20"
+          className="relative z-10 flex flex-col justify-end pb-10 md:pb-20 max-md:!flex-[unset] max-md:!max-w-full max-md:!w-full max-md:items-center max-md:px-5"
           style={{
             paddingLeft: "clamp(20px, 5vw, 80px)",
             flex: "0 0 35%",
@@ -37,7 +37,7 @@ export function HeroSection() {
           {/* Trust line / eyebrow */}
           <p
             className={cn(
-              "mb-4 transition-all duration-[600ms] ease-out",
+              "mb-4 transition-all duration-[600ms] ease-out max-md:text-center",
               mounted
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-5"
@@ -57,7 +57,7 @@ export function HeroSection() {
           {/* H1 */}
           <h1
             className={cn(
-              "mb-4 transition-all duration-[700ms] ease-out",
+              "mb-4 transition-all duration-[700ms] ease-out max-md:!text-[2.8rem] max-md:text-center",
               mounted
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-5"
@@ -77,7 +77,7 @@ export function HeroSection() {
           {/* Subhead */}
           <p
             className={cn(
-              "mb-3 transition-all duration-[600ms] ease-out",
+              "mb-3 transition-all duration-[600ms] ease-out max-md:text-center",
               mounted
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-5"
@@ -96,7 +96,7 @@ export function HeroSection() {
           {/* Value prop */}
           <p
             className={cn(
-              "mb-10 transition-all duration-[600ms] ease-out",
+              "mb-10 transition-all duration-[600ms] ease-out max-md:text-center",
               mounted
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-5"
@@ -117,7 +117,7 @@ export function HeroSection() {
           {/* CTAs */}
           <div
             className={cn(
-              "flex flex-wrap gap-3 transition-all duration-[600ms] ease-out",
+              "flex flex-wrap gap-3 transition-all duration-[600ms] ease-out max-md:flex-col max-md:w-full",
               mounted
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-5"
@@ -128,7 +128,8 @@ export function HeroSection() {
               href="/contact"
               className={cn(
                 "inline-block rounded-full transition-colors duration-200",
-                "bg-[#0a0a0a] text-white hover:bg-black/80"
+                "bg-[#0a0a0a] text-white hover:bg-black/80",
+                "max-md:w-full max-md:text-center"
               )}
               style={{
                 padding: "12px 28px",
@@ -142,7 +143,8 @@ export function HeroSection() {
               href="#services"
               className={cn(
                 "inline-block rounded-full text-[#0a0a0a] transition-colors duration-200",
-                "border border-[rgba(0,0,0,0.3)] hover:border-black"
+                "border border-[rgba(0,0,0,0.3)] hover:border-black",
+                "max-md:w-full max-md:text-center"
               )}
               style={{ padding: "12px 28px", fontSize: "14px" }}
             >

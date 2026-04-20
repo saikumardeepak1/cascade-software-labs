@@ -195,7 +195,7 @@ export default function ServicesStacking() {
         style={{ padding: "120px 80px 120px" }}
       >
         {/* Header */}
-        <div style={{ marginBottom: "100px" }}>
+        <div className="max-md:text-center" style={{ marginBottom: "100px" }}>
           <p
             style={{
               fontSize: "12px",
@@ -334,7 +334,7 @@ export default function ServicesStacking() {
         {/* Mobile fallback — single column */}
         <div className="hidden max-md:flex flex-col gap-14">
           {services.map((service) => (
-            <div key={service.id}>
+            <div key={service.id} className="text-center">
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -347,6 +347,7 @@ export default function ServicesStacking() {
                   letterSpacing: "0.1em",
                   color: "rgba(0,0,0,0.3)",
                   marginBottom: "10px",
+                  textAlign: "center",
                 }}
               >
                 {service.id} — {service.sub}
@@ -362,13 +363,14 @@ export default function ServicesStacking() {
                   lineHeight: 1.2,
                   color: "#1d1d1f",
                   marginBottom: "12px",
+                  textAlign: "center",
                 }}
               />
               <SlideWords
                 text={service.desc}
                 from="left"
                 stagger={0.015}
-                style={{ fontSize: "17px", lineHeight: 1.42, color: "#86868b" }}
+                style={{ fontSize: "17px", lineHeight: 1.42, color: "#86868b", textAlign: "center" }}
               />
             </div>
           ))}

@@ -250,7 +250,7 @@ export default function InteractiveSection() {
     >
       <div data-stack-content style={{ maxWidth: "1440px", margin: "0 auto", width: "100%", display: "flex", flexDirection: "column", height: "100%", transformOrigin: "center bottom" }}>
         {/* Heading block — anchored position */}
-        <div data-heading style={{ marginBottom: "48px" }}>
+        <div data-heading className="max-md:text-center max-md:[&_*]:!max-w-full" style={{ marginBottom: "48px" }}>
           <p
             style={{
               fontSize: "12px",
@@ -288,6 +288,7 @@ export default function InteractiveSection() {
 
         {/* Tab buttons */}
         <div
+          className="max-md:overflow-x-auto max-md:!flex-nowrap max-md:pb-2"
           style={{ display: "flex", gap: "8px", marginBottom: "40px", flexWrap: "wrap" }}
         >
           {TABS.map((tab, i) => (

@@ -64,7 +64,7 @@ export default function FinalCTA() {
         }}
       >
         {/* Heading */}
-        <div style={{ marginBottom: "48px" }}>
+        <div className="max-md:text-center max-md:[&_*]:!max-w-full" style={{ marginBottom: "48px" }}>
           <p style={{ fontSize: "12px", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", color: "rgba(0,0,0,0.4)", marginBottom: "20px" }}>
             Get started.
           </p>
@@ -105,6 +105,7 @@ export default function FinalCTA() {
         {/* CTA button */}
         <Link
           href="/contact"
+          className="max-md:!w-full max-md:!text-center max-md:block"
           style={{
             display: "inline-block",
             padding: "14px 32px",

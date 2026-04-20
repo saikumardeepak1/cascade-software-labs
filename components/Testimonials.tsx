@@ -93,7 +93,7 @@ export default function FAQ() {
         }}
       >
         {/* Heading block — anchored position */}
-        <div data-heading style={{ marginBottom: "48px" }}>
+        <div data-heading className="max-md:text-center max-md:[&_*]:!max-w-full" style={{ marginBottom: "48px" }}>
           <p
             style={{
               fontSize: "12px",

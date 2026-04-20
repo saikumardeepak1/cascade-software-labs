@@ -117,7 +117,7 @@ export default function Advantages() {
           }}
         >
           {/* Heading — visible immediately on lift */}
-          <div style={{ maxWidth: "640px", marginBottom: "60px" }}>
+          <div className="max-md:text-center max-md:!max-w-full" style={{ maxWidth: "640px", marginBottom: "60px" }}>
             <p
               style={{
                 fontSize: "12px",

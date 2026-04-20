@@ -87,6 +87,7 @@ export default function ProjectsPage() {
 
       {/* ── Hero ── */}
       <section
+        className="max-md:!bg-none max-md:!bg-white"
         style={{
           height: "100vh",
           width: "100vw",
@@ -99,7 +100,7 @@ export default function ProjectsPage() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div style={{ position: "absolute", top: "50vh", left: 0, paddingLeft: "clamp(20px, 5.5vw, 80px)", paddingRight: "clamp(20px, 5.5vw, 80px)", maxWidth: "720px" }}>
+        <div className="max-md:!top-[40vh] max-md:!px-5 max-md:text-center max-md:!left-0 max-md:!right-0 max-md:!max-w-full" style={{ position: "absolute", top: "50vh", left: 0, paddingLeft: "clamp(20px, 5.5vw, 80px)", paddingRight: "clamp(20px, 5.5vw, 80px)", maxWidth: "720px" }}>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -109,6 +110,7 @@ export default function ProjectsPage() {
             Projects & Products
           </motion.p>
           <motion.h1
+            className="max-md:!text-[2.2rem]"
             style={{ fontSize: "clamp(2.5rem, 7vw, 6.5rem)", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.02, color: "#1d1d1f", marginBottom: "36px" }}
           >
             {["What", "We're", "Building"].map((word, i, arr) => (

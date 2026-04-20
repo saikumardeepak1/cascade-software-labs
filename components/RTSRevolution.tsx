@@ -51,11 +51,11 @@ export default function IntroSection() {
           </div>
 
           {/* Text centered in the full block, above animation */}
-          <div className="absolute inset-0 z-10 flex items-center justify-center px-10">
+          <div className="absolute inset-0 z-10 flex items-center justify-center px-10 max-md:!px-5">
             <SlideWords
               text="Cascade Software Labs is a Pacific Northwest-based AI consultancy building enterprise-ready, secure, and cost-optimized Agentic AI solutions for modern enterprises. We bridge the gap between proof of concept and production-grade AI systems."
               style={{
-                fontSize: "clamp(1.5rem, 3.2vw, 2.8rem)",
+                fontSize: "clamp(1.4rem, 3.2vw, 2.8rem)",
                 fontWeight: 600,
                 lineHeight: 1.4,
                 letterSpacing: "-0.025em",

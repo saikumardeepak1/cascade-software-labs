@@ -116,6 +116,7 @@ export default function CompanyPage() {
 
       {/* ── Hero ── */}
       <section
+        className="max-md:!bg-none max-md:!bg-white"
         style={{
           height: "100vh",
           width: "100vw",
@@ -130,6 +131,7 @@ export default function CompanyPage() {
       >
         {/* Left: text anchored to bottom-left */}
         <div
+          className="max-md:!top-[40vh] max-md:!px-5 max-md:text-center max-md:!left-0 max-md:!right-0 max-md:!max-w-full"
           style={{
             position: "absolute",
             top: "50vh",
@@ -149,6 +151,7 @@ export default function CompanyPage() {
           </motion.p>
 
           <motion.h1
+            className="max-md:!text-[2.2rem]"
             style={{ fontSize: "clamp(2.2rem, 5vw, 5rem)", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.05, color: "#1d1d1f", marginBottom: "32px" }}
           >
             {["Cascade", "Software", "Labs"].map((word, i, arr) => (
