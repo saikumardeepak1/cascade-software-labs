@@ -11,7 +11,8 @@ const NAV_ITEMS = [
   { label: "Company",   href: "/company" },
   { label: "Careers",   href: "/careers" },
   { label: "Projects",  href: "/projects" },
-  { label: "Contact",   href: "/contact" },
+  { label: "Contact",      href: "/contact" },
+  { label: "Sustainability", href: "/sustainability" },
 ];
 
 function NavItem({ label, href, dark }: { label: string; href: string; dark?: boolean }) {
@@ -52,31 +53,25 @@ function NavItem({ label, href, dark }: { label: string; href: string; dark?: bo
 
 export default function NavBar({ dark }: { dark?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const textColor = dark ? "text-white" : "text-[#1d1d1f]";
-  const barColor  = dark ? "bg-white"   : "bg-[#1d1d1f]";
+  const barColor = dark ? "bg-white" : "bg-[#1d1d1f]";
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-10 h-16 backdrop-blur-md bg-white/10 border-b border-white/10">
-        <Link href="/" className={cn("font-bold text-xl tracking-wider hover:opacity-70 transition-opacity", textColor)}>
+      <header className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-10 h-16 backdrop-blur-md bg-white/70 border-b border-black/10">
+        <Link href="/" className="font-bold text-xl tracking-wider text-[#1d1d1f] hover:opacity-70 transition-opacity">
           CASCADE
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
           {NAV_ITEMS.map((item) => (
-            <NavItem key={item.label} label={item.label} href={item.href} dark={dark} />
+            <NavItem key={item.label} label={item.label} href={item.href} dark={false} />
           ))}
         </nav>
 
         <div className="flex items-center gap-4">
           <Link
             href="/contact"
-            className={cn(
-              "hidden md:inline-flex items-center text-[13px] font-medium px-4 py-1.5 rounded-full transition-colors",
-              dark
-                ? "bg-white text-[#0a0a0a] hover:bg-white/85"
-                : "bg-[#1d1d1f] text-white hover:bg-black/80"
-            )}
+            className="hidden md:inline-flex items-center text-[13px] font-medium px-4 py-1.5 rounded-full transition-colors bg-[#1d1d1f] text-white hover:bg-black/80"
           >
             Book Discovery Call
           </Link>
