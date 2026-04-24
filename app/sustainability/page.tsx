@@ -66,7 +66,9 @@ export default function SustainabilityPage() {
           minHeight: "600px",
           position: "relative",
           overflow: "hidden",
-          background: "linear-gradient(145deg, #0a0e1a 0%, #0c1a10 55%, #0f1520 100%)",
+          backgroundImage: "url('/Sustainability.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         {/* Text anchored to bottom-left */}
