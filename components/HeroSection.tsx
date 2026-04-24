@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "@/components/ui/spotlight";
-import { TextScramble } from "@/components/ui/text-scramble";
+import { Typewriter } from "@/components/ui/typewriter";
+import { MagicTextReveal } from "@/components/ui/magic-text-reveal";
 
 export function HeroSection() {
   const [mounted, setMounted] = useState(false);
-  const [eyebrowHovered, setEyebrowHovered] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -20,7 +20,6 @@ export function HeroSection() {
       style={{ height: "100svh", position: "sticky", top: 0, zIndex: 1, backgroundImage: "url('/hero-bg.png?v=2')", backgroundSize: "cover", backgroundPosition: "center" }}
       aria-label="Hero"
     >
-
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"
@@ -32,46 +31,56 @@ export function HeroSection() {
           className="relative z-10 flex flex-col justify-end pb-10 md:pb-20 max-md:!flex-[unset] max-md:!max-w-full max-md:!w-full max-md:items-center max-md:px-5"
           style={{
             paddingLeft: "clamp(20px, 5vw, 80px)",
-            flex: "0 0 35%",
-            maxWidth: "35%",
+            flex: "0 0 45%",
+            maxWidth: "45%",
           }}
         >
-          {/* Trust line / eyebrow */}
-          <p
+          {/* Eyebrow — MagicTextReveal particle effect on desktop */}
+          <div
             className={cn(
-              "mb-4 transition-all duration-[600ms] ease-out max-md:text-center cursor-default",
-              mounted
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-5"
+              "mb-1 transition-all duration-[600ms] ease-out max-md:hidden",
+              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             )}
+            style={{ transitionDelay: "100ms" }}
+          >
+            <MagicTextReveal
+              text="Anthropic Partner Network"
+              color="rgba(29, 29, 31, 0.75)"
+              fontSize={18}
+              fontFamily="-apple-system, BlinkMacSystemFont, 'SF Pro Display', Arial, sans-serif"
+              fontWeight={700}
+              spread={30}
+              speed={0.4}
+              density={4}
+              resetOnMouseLeave={true}
+              style={{
+                backgroundColor: 'transparent',
+                border: 'none',
+                backdropFilter: 'none',
+                borderRadius: 0,
+              }}
+            />
+          </div>
+
+          {/* Mobile fallback */}
+          <p
+            className="mb-4 hidden max-md:block text-center"
             style={{
-              fontSize: "17px",
+              fontSize: "14px",
               fontWeight: 700,
               letterSpacing: "0.08em",
               textTransform: "uppercase",
               color: "rgba(0,0,0,0.6)",
-              transitionDelay: "200ms",
             }}
-            onMouseEnter={() => setEyebrowHovered(true)}
-            onMouseLeave={() => setEyebrowHovered(false)}
           >
-            <TextScramble
-              as="span"
-              trigger={eyebrowHovered}
-              duration={0.6}
-              speed={0.03}
-            >
-              Anthropic Partner Network
-            </TextScramble>
+            Anthropic Partner Network
           </p>
 
           {/* H1 */}
           <h1
             className={cn(
               "mb-4 transition-all duration-[700ms] ease-out max-md:!text-[2.8rem] max-md:text-center",
-              mounted
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-5"
+              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             )}
             style={{
               fontSize: "clamp(1.9rem, 5.4vw, 5.4rem)",
@@ -85,13 +94,11 @@ export function HeroSection() {
             Agentic AI Solutions
           </h1>
 
-          {/* Subhead */}
+          {/* Subhead — typewriter */}
           <p
             className={cn(
               "mb-3 transition-all duration-[600ms] ease-out max-md:text-center",
-              mounted
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-5"
+              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             )}
             style={{
               fontSize: "clamp(1.3rem, 2.4vw, 1.8rem)",
@@ -99,18 +106,30 @@ export function HeroSection() {
               color: "#86868b",
               letterSpacing: "-0.01em",
               transitionDelay: "550ms",
+              minHeight: "2.2rem",
             }}
           >
-            Enterprise Agentic AI
+            {mounted && (
+              <Typewriter
+                words={[
+                  "Enterprise Agentic AI",
+                  "Secure by Design",
+                  "Production-Ready",
+                  "40–70% Cost Reduction",
+                ]}
+                speed={70}
+                delayBetweenWords={2200}
+                cursor={true}
+                cursorChar="|"
+              />
+            )}
           </p>
 
           {/* Value prop */}
           <p
             className={cn(
               "mb-10 transition-all duration-[600ms] ease-out max-md:text-center",
-              mounted
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-5"
+              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             )}
             style={{
               fontSize: "clamp(1.0625rem, 1.8vw, 1.1875rem)",
@@ -129,9 +148,7 @@ export function HeroSection() {
           <div
             className={cn(
               "flex flex-wrap gap-3 transition-all duration-[600ms] ease-out max-md:flex-col max-md:w-full",
-              mounted
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-5"
+              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             )}
             style={{ transitionDelay: "800ms" }}
           >
@@ -142,11 +159,7 @@ export function HeroSection() {
                 "bg-[#0a0a0a] text-white hover:bg-black/80",
                 "max-md:w-full max-md:text-center"
               )}
-              style={{
-                padding: "12px 28px",
-                fontSize: "14px",
-                fontWeight: 500,
-              }}
+              style={{ padding: "12px 28px", fontSize: "14px", fontWeight: 500 }}
             >
               Book Discovery Call
             </Link>
@@ -163,11 +176,6 @@ export function HeroSection() {
             </Link>
           </div>
         </div>
-
-        {/* Spline 3D robot — reserved for another section */}
-        {/* <div className="relative hidden md:block" style={{ flex: "1 1 65%" }}>
-          <SplineScene scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode" className="w-full h-full" />
-        </div> */}
       </div>
     </section>
   );
