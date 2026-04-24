@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <CascadeLoader />
-      <NavBar />
+      <NavBar dark />
       <SectionDotNav />
 
       {/* ── Section 1: Hero ── */}

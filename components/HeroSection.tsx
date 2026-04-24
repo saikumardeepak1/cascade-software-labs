@@ -15,7 +15,7 @@ export function HeroSection() {
   return (
     <section
       className="relative overflow-hidden max-md:!bg-none max-md:!bg-white"
-      style={{ height: "100svh", position: "sticky", top: 0, zIndex: 1, backgroundImage: "url('/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+      style={{ height: "100svh", position: "sticky", top: 0, zIndex: 1, backgroundImage: "url('/hero-bg.png?v=2')", backgroundSize: "cover", backgroundPosition: "center" }}
       aria-label="Hero"
     >
 

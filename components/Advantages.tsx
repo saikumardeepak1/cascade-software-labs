@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import React, { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import GlassCard from "@/components/ui/glass-card"
 
@@ -158,7 +158,7 @@ export default function Advantages() {
             style={{ perspective: "800px" }}
           >
             {cards.map((card, i) => (
-              <>
+              <React.Fragment key={card.number}>
                 {/* Desktop: scatter animation card */}
                 <div key={`desktop-${card.number}`} className="hidden md:block">
                   <ScatterCard
@@ -187,7 +187,7 @@ export default function Advantages() {
                   <p style={{ fontSize: "18px", fontWeight: 600, color: "#1d1d1f", letterSpacing: "-0.02em", marginBottom: "10px" }}>{card.title}</p>
                   <p style={{ fontSize: "15px", color: "#86868b", lineHeight: 1.5 }}>{card.body}</p>
                 </motion.div>
-              </>
+              </React.Fragment>
             ))}
           </div>
         </div>

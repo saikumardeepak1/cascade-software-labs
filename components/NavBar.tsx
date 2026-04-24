@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { TextScramble } from "@/components/ui/text-scramble";
 
 const NAV_ITEMS = [
+  { label: "Home",      href: "/" },
   { label: "Solutions", href: "/solutions" },
   { label: "Company",   href: "/company" },
   { label: "Careers",   href: "/careers" },
@@ -56,7 +57,7 @@ export default function NavBar({ dark }: { dark?: boolean }) {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-10 h-16">
+      <header className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-10 h-16 backdrop-blur-md bg-white/10 border-b border-white/10">
         <Link href="/" className={cn("font-bold text-xl tracking-wider hover:opacity-70 transition-opacity", textColor)}>
           CASCADE
         </Link>
