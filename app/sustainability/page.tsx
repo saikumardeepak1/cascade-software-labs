@@ -868,11 +868,12 @@ export default function SustainabilityPage() {
       {/* ── Join the Conversation ── */}
       <section
         style={{
-          background: "#1d1d1f",
+          background: "#ffffff",
           paddingTop: "120px",
           paddingBottom: "120px",
           paddingLeft: "clamp(20px, 5.5vw, 80px)",
           paddingRight: "clamp(20px, 5.5vw, 80px)",
+          borderTop: "1px solid rgba(0,0,0,0.08)",
         }}
       >
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
@@ -890,7 +891,7 @@ export default function SustainabilityPage() {
                 fontWeight: 500,
                 textTransform: "uppercase",
                 letterSpacing: "0.1em",
-                color: "rgba(255,255,255,0.35)",
+                color: "rgba(0,0,0,0.35)",
                 marginBottom: "28px",
               }}
             >
@@ -903,7 +904,7 @@ export default function SustainabilityPage() {
                 fontSize: "clamp(2rem, 4.5vw, 4rem)",
                 fontWeight: 600,
                 letterSpacing: "-0.025em",
-                color: "#f5f5f7",
+                color: "#1d1d1f",
                 lineHeight: 1.1,
                 marginBottom: "24px",
               }}
@@ -913,13 +914,13 @@ export default function SustainabilityPage() {
               variants={fadeUp}
               style={{
                 fontSize: "19px",
-                color: "rgba(255,255,255,0.55)",
+                color: "#86868b",
                 lineHeight: 1.42,
                 maxWidth: "520px",
                 marginBottom: "48px",
               }}
             >
-              We want to work with customers, partners, and people who take this seriously. If sustainability matters to your business too, we'd love to hear from you.
+              We want to work with customers, partners, and people who take this seriously. If sustainability matters to your business too, we&apos;d love to hear from you.
             </motion.p>
 
             {/* Email form */}
@@ -927,7 +928,7 @@ export default function SustainabilityPage() {
               <p
                 style={{
                   fontSize: "14px",
-                  color: "rgba(255,255,255,0.5)",
+                  color: "rgba(0,0,0,0.45)",
                   marginBottom: "16px",
                 }}
               >
@@ -942,11 +943,11 @@ export default function SustainabilityPage() {
                   type="email"
                   placeholder="your@email.com"
                   style={{
-                    background: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.15)",
+                    background: "rgba(0,0,0,0.03)",
+                    border: "1px solid rgba(0,0,0,0.15)",
                     borderRadius: "100px",
                     padding: "12px 24px",
-                    color: "white",
+                    color: "#1d1d1f",
                     fontSize: "14px",
                     outline: "none",
                     width: "280px",
@@ -955,8 +956,8 @@ export default function SustainabilityPage() {
                 <button
                   type="submit"
                   style={{
-                    background: "#ffffff",
-                    color: "#1d1d1f",
+                    background: "#1d1d1f",
+                    color: "#ffffff",
                     borderRadius: "100px",
                     padding: "12px 28px",
                     fontSize: "14px",
@@ -984,12 +985,12 @@ export default function SustainabilityPage() {
                 href="/sustainability/policy"
                 style={{
                   fontSize: "14px",
-                  color: "rgba(255,255,255,0.5)",
+                  color: "rgba(0,0,0,0.45)",
                   textDecoration: "underline",
                   transition: "color 0.2s ease",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.8)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(0,0,0,0.8)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(0,0,0,0.45)")}
               >
                 Read our full Sustainability Policy
               </Link>
@@ -997,12 +998,12 @@ export default function SustainabilityPage() {
                 href="/contact"
                 style={{
                   fontSize: "14px",
-                  color: "rgba(255,255,255,0.5)",
+                  color: "rgba(0,0,0,0.45)",
                   textDecoration: "underline",
                   transition: "color 0.2s ease",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.8)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(0,0,0,0.8)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(0,0,0,0.45)")}
               >
                 Ask us anything
               </Link>

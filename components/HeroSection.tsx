@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "@/components/ui/spotlight";
+import { TextScramble } from "@/components/ui/text-scramble";
 
 export function HeroSection() {
   const [mounted, setMounted] = useState(false);
+  const [eyebrowHovered, setEyebrowHovered] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -37,21 +39,30 @@ export function HeroSection() {
           {/* Trust line / eyebrow */}
           <p
             className={cn(
-              "mb-4 transition-all duration-[600ms] ease-out max-md:text-center",
+              "mb-4 transition-all duration-[600ms] ease-out max-md:text-center cursor-default",
               mounted
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-5"
             )}
             style={{
-              fontSize: "14px",
-              fontWeight: 500,
+              fontSize: "17px",
+              fontWeight: 700,
               letterSpacing: "0.08em",
               textTransform: "uppercase",
-              color: "rgba(0,0,0,0.5)",
+              color: "rgba(0,0,0,0.6)",
               transitionDelay: "200ms",
             }}
+            onMouseEnter={() => setEyebrowHovered(true)}
+            onMouseLeave={() => setEyebrowHovered(false)}
           >
-            Anthropic Partner Network
+            <TextScramble
+              as="span"
+              trigger={eyebrowHovered}
+              duration={0.6}
+              speed={0.03}
+            >
+              Anthropic Partner Network
+            </TextScramble>
           </p>
 
           {/* H1 */}

@@ -11,8 +11,8 @@ const NAV_ITEMS = [
   { label: "Company",   href: "/company" },
   { label: "Careers",   href: "/careers" },
   { label: "Projects",  href: "/projects" },
-  { label: "Contact",      href: "/contact" },
   { label: "Sustainability", href: "/sustainability" },
+  { label: "Contact",        href: "/contact" },
 ];
 
 function NavItem({ label, href, dark }: { label: string; href: string; dark?: boolean }) {
