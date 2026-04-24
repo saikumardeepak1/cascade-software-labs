@@ -43,7 +43,7 @@ export function ParticleTextEffect({
   className = "",
 }: ParticleTextEffectProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animRef = useRef<number>()
+  const animRef = useRef<number | undefined>(undefined)
   const particlesRef = useRef<Particle[]>([])
 
   useEffect(() => {
